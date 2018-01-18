@@ -11,7 +11,10 @@ import { OfficeListComponent } from '../../components/office-list/office-list.co
 import { PeityModule } from '../../components/charts/peity';
 import { SparklineModule } from '../../components/charts/sparkline';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ModalModule } from 'ngx-modialog';
+import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
 
+import { OrderByPipe } from '../../pipes/orderBy.pipe';
 import { SearchPipe } from '../../pipes/search.pipe';
 
 @NgModule({
@@ -20,6 +23,7 @@ import { SearchPipe } from '../../pipes/search.pipe';
     LoginComponent,
     SyslogListComponent,
     OfficeListComponent,
+    OrderByPipe,
     SearchPipe
   ],
   imports: [
@@ -28,7 +32,9 @@ import { SearchPipe } from '../../pipes/search.pipe';
     PeityModule,
     SparklineModule,
     FormsModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    ModalModule.forRoot(),
+    BootstrapModalModule
   ],
   exports: [
     StarterViewComponent,

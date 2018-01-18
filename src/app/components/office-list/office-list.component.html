@@ -25,7 +25,7 @@
           <div class="row">
             <div class="col-sm-3 pull-right">
               <div class="input-group pull-right">
-                <input [(ngModel)]="searchText" type="text" placeholder="Search by Office Name" class="input-sm form-control">
+                <input [(ngModel)]="searchText" type="text" placeholder="Search by Internal Name" class="input-sm form-control">
               </div>
             </div>
             <br />
@@ -42,21 +42,19 @@
                     <th>Five9 Dnis</th>
                     <th>Dead ?</th>
                     <th>IRN</th>
-                    <th>Dnis</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let office of offices">
+                  <tr *ngFor="let office of offices | filter : searchText">
                     <td>{{office.OfficeId}}</td>
-                    <td>{{office.Name}}</td>
-                    <td>{{office.InternalName}}</td>
-                    <td>{{office.PhoneNumber}}</td>
-                    <td>{{office.five9DnisId}}</td>
-                    <td>{{office.Dead}}</td>
-                    <td>{{office.Irn}}</td>
-                    <td>{{office.DnisId}}</td>
-                    <td><i aria-hidden="true" class="fa fa-wrench"></i></td>
+                    <td class="col-md-4">{{office.Name}}</td>
+                    <td class="col-sm-2">{{office.InternalName}}</td>
+                    <td class="col-sm-2">{{office.PhoneNumber}}</td>
+                    <td class="col-sm-1">{{office.five9DnisId}}</td>
+                    <td class="col-md-1">{{office.Dead}}</td>
+                    <td class="col-md-1">{{office.Irn}}</td>
+                    <td class="col-sm-1" (click)="onClick()"><a><i aria-hidden="true" class="fa fa-wrench"></i></a></td>
                   </tr>
                 </tbody>
               </table>

@@ -35,6 +35,7 @@
     "metismenu": "^2.5.0",
     "ng2-charts": "^1.5.0",
     "ngx-bootstrap": "^1.6.6",
+    "ngx-modialog": "^5.0.0",
     "node-windows": "^0.1.14",
     "peity": "^3.2.1",
     "rxjs": "^5.1.0",
