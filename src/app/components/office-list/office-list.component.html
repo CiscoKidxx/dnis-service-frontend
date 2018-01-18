@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>{{pageTitle}}</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+          <ul class="dropdown-menu dropdown-user">
+            <li><a href="#">Config option 1</a>
+            </li>
+            <li><a href="#">Config option 2</a>
+            </li>
+          </ul>
+          <a class="close-link">
+              <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="ibox-content">
+
+          <div class="row">
+            <div class="col-sm-3 pull-right">
+              <div class="input-group pull-right">
+                <input [(ngModel)]="searchText" type="text" placeholder="Search by Office Name" class="input-sm form-control">
+              </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Public Name</th>
+                    <th>Internal Name</th>
+                    <th>Phone Number</th>
+                    <th>Five9 Dnis</th>
+                    <th>Dead ?</th>
+                    <th>IRN</th>
+                    <th>Dnis</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let office of offices">
+                    <td>{{office.OfficeId}}</td>
+                    <td>{{office.Name}}</td>
+                    <td>{{office.InternalName}}</td>
+                    <td>{{office.PhoneNumber}}</td>
+                    <td>{{office.five9DnisId}}</td>
+                    <td>{{office.Dead}}</td>
+                    <td>{{office.Irn}}</td>
+                    <td>{{office.DnisId}}</td>
+                    <td><i aria-hidden="true" class="fa fa-wrench"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- <div class="ibox-content">
+              <ngx-datatable [columnMode]="'force'" [rows]="offices" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
+                <ngx-datatable-column name="Id" [maxWidth]="35" prop="OfficeId"></ngx-datatable-column>
+                <ngx-datatable-column name="Name" [minWidth]="350" prop="Name"></ngx-datatable-column>
+                <ngx-datatable-column name="Internal Name" prop="InternalName"></ngx-datatable-column>
+                <ngx-datatable-column name="Five9 Dnis Id" prop="five9DnisId"></ngx-datatable-column>
+                <ngx-datatable-column name="Phone Number" prop="PhoneNumber"></ngx-datatable-column>
+                <ngx-datatable-column name="Dead ?" [maxWidth]="50" prop="Dead"></ngx-datatable-column>
+                <ngx-datatable-column name="Irn" prop="Irn"></ngx-datatable-column>
+              </ngx-datatable>
+            </div> -->
+
+          </div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
